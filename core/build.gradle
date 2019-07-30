@@ -1,0 +1,14 @@
+bootRun.enabled = false
+bootJar.enabled = false
+jar.enabled = true
+
+dependencies {
+    compile "org.modelmapper:modelmapper:$modelmapper_version"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jackson_version"
+    compile "com.fasterxml.jackson.core:jackson-annotations:$jackson_version"
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:$jackson_version"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-joda:$jackson_version"
+    compile "javax.validation:validation-api:$javax_version"
+    compile "com.googddle.code.gson:gson:$gson_version"
+    compile 'org.antlr:ST4:4.0.8'
+}

@@ -1,0 +1,23 @@
+bootRun.enabled = false
+bootJar.enabled = false
+jar.enabled = true
+
+dependencies {
+	compile project(':core')
+
+//	compile('org.hibernate:hibernate-entitymanager')
+//	compile('org.hibernate:hibernate-core')
+//	compile 'javax.persistence:javax.persistence-api:2.2'
+	compile 'org.jadira.usertype:usertype.core:6.0.1.GA'
+	compile 'redis.clients:jedis:3.0.1'
+
+
+//	domain
+//	redis
+//	compile('com.zaxxer:HikariCP')
+//	runtime('mysql:mysql-connector-java')
+
+	//test
+//	testRuntime('com.h2database:h2')
+	testImplementation 'it.ozimov:embedded-redis:0.7.2'
+}

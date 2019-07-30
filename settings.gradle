@@ -1,0 +1,5 @@
+rootProject.name = 'sample-storm'
+
+include 'core'
+include 'domain'
+include 'topology'

@@ -1,0 +1,34 @@
+name: "wordcount"
+
+config:
+  topology.workers: 1
+
+spouts:
+  - id: "sentence-spout"
+    className: "com.microsoft.example.RandomSentenceSpout"
+    parallelism: 1
+
+bolts:
+  - id: "splitter-bolt"
+    className: "com.microsoft.example.SplitSentence"
+    parallelism: 1
+
+  - id: "counter-bolt"
+    className: "com.microsoft.example.WordCount"
+    constructorArgs:
+      - 10
+    parallelism: 1
+
+streams:
+  - name: "Spout --> Splitter"
+    from: "sentence-spout"
+    to: "splitter-bolt"
+    grouping:
+      type: SHUFFLE
+
+  - name: "Splitter -> Counter"
+    from: "splitter-bolt"
+    to: "counter-bolt"
+    grouping:
+      type: FIELDS
+      args: ["word"]
